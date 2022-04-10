@@ -1,18 +1,7 @@
--- MySQL Administrator dump 1.4
---
--- ------------------------------------------------------
--- Server version	5.0.22-community-nt
-
---
--- Create schema otgms
---
 
 CREATE DATABASE IF NOT EXISTS otgms;
 USE otgms;
 
---
--- Definition of table `admin`
---
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
@@ -59,22 +48,10 @@ CREATE TABLE `daily_entry` (
   `vnum` varchar(45) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `daily_entry`
---
-
-/*!40000 ALTER TABLE `daily_entry` DISABLE KEYS */;
 INSERT INTO `daily_entry` (`id`,`toll_id`,`toll_name`,`toll_section`,`type`,`rate`,`plan`,`time`,`trans`,`vnum`) VALUES 
  (1,'120','Gangaycha Jatt','Rohtak - Bawal\r','Car,Jeep,Van,LMV,Three wheelers',85,'single','2017/12/29 15:33:33','PAYID50151','MH 89789'),
  (2,'1','Aganampudi','Vishakhapatnam - Ankapalli [Km 2.837 to &Km 395.870 to Km358.00(New Chainage From Km 700.544 to Km 740.255)]\r','Car,Jeep,Van,LMV,Three wheelers',130,'returns','2017/12/30 10:39:12','PAYID58531','TN 03 AH 4585'),
  (3,'1','Aganampudi','Vishakhapatnam - Ankapalli [Km 2.837 to &Km 395.870 to Km358.00(New Chainage From Km 700.544 to Km 740.255)]\r','2 axle - Truck / Bus',250,'single','2018/01/03 13:00:05','PAYID78737','AP 12 FT 8968');
-/*!40000 ALTER TABLE `daily_entry` ENABLE KEYS */;
-
-
---
--- Definition of table `fare_details`
---
 
 DROP TABLE IF EXISTS `fare_details`;
 CREATE TABLE `fare_details` (
@@ -87,12 +64,6 @@ CREATE TABLE `fare_details` (
   `sid` int(10) unsigned NOT NULL auto_increment,
   PRIMARY KEY  (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `fare_details`
---
-
-/*!40000 ALTER TABLE `fare_details` DISABLE KEYS */;
 INSERT INTO `fare_details` (`vehicle_type`,`single`,`returns`,`daily_pass`,`fifty_trip`,`monthly`,`sid`) VALUES 
  ('Car,Jeep,Van,LMV,Three wheelers','90','130','235','3000','5000',1),
  ('LCV,LGV,MiniBus','150','205','370','4495','8000',2),
@@ -100,12 +71,6 @@ INSERT INTO `fare_details` (`vehicle_type`,`single`,`returns`,`daily_pass`,`fift
  ('3 axle commercial vehicle','285','500','785','9500','16670',4),
  ('Heavy Construction Machinery /Earth Moving Equipments / Multi axle vehicles','350','525','960','11665','20475',5),
  ('Over Sized Vehicles- 7 or more axles','450','675','1235','15000','26325',6);
-/*!40000 ALTER TABLE `fare_details` ENABLE KEYS */;
-
-
---
--- Definition of table `feedback`
---
 
 DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE `feedback` (
@@ -153,21 +118,9 @@ CREATE TABLE `staff` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `staff`
---
-
-/*!40000 ALTER TABLE `staff` DISABLE KEYS */;
 INSERT INTO `staff` (`id`,`sid`,`name`,`email`,`phone`,`dob`,`password`,`time`,`statuss`,`salary`,`branch`,`shift`,`address`) VALUES 
  (1,'STAFF58723','Pavan Kumar','pavankumar536@gmail.com','9994745727','1991-10-03','Pavan123','2018/01/03 11:17:39','Active','30000','1','Day','Cuddalore'),
  (2,'STAFF56272','Pranay','Pranay325@gmail.com','8903919372','1992-10-11','Pranay123','2018/01/03 12:51:49','Active','30000','1','Night','Cuddalore');
-/*!40000 ALTER TABLE `staff` ENABLE KEYS */;
-
-
---
--- Definition of table `ticket`
---
-
 DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE `ticket` (
   `id` int(10) unsigned NOT NULL auto_increment,
@@ -186,11 +139,6 @@ CREATE TABLE `ticket` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `ticket`
---
-
-/*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
 INSERT INTO `ticket` (`id`,`uid`,`uname`,`umail`,`toll_id`,`toll_name`,`toll_section`,`type`,`rate`,`plan`,`time`,`trans`,`vnum`) VALUES 
  (1,'1','Kiran','Kiran786@gmail.com','337','Boothakudi','Trichi Bypass - Tovarankurichi - Madurai\r','3 axle commercial vehicle',430,'returns','2017/12/29 14:53:19','PAYID20862',''),
  (2,'1','Kiran','Kiran786@gmail.com','120','Gangaycha Jatt','Rohtak - Bawal\r','Car,Jeep,Van,LMV,Three wheelers',85,'single','2017/12/29 15:32:25','PAYID77918',''),
@@ -200,12 +148,6 @@ INSERT INTO `ticket` (`id`,`uid`,`uname`,`umail`,`toll_id`,`toll_name`,`toll_sec
  (6,'1','Nithesh','Nithesh535@gmail.com','178','Akkulam (MoRTH)','Aroor - Kerala/Tamil Nadu Border Section (Km 5.750 to Km 6.119 on NH 66 Bypass)\r','Car,Jeep,Van,LMV,Three wheelers',85,'single','2018/01/03 12:31:49','PAYID25405','TN 31 BE 8985');
 INSERT INTO `ticket` (`id`,`uid`,`uname`,`umail`,`toll_id`,`toll_name`,`toll_section`,`type`,`rate`,`plan`,`time`,`trans`,`vnum`) VALUES 
  (7,'4','Ajay','Ajay2435@gmail.com','336','Athur (Tindivanam)','Tambaram - Tindivanam (Km 74.500 - Km 121.000)\r','Car,Jeep,Van,LMV,Three wheelers',130,'returns','2018/01/03 12:46:11','PAYID87279','TN 09 BD 8955');
-/*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
-
-
---
--- Definition of table `toll_details`
---
 
 DROP TABLE IF EXISTS `toll_details`;
 CREATE TABLE `toll_details` (
@@ -218,11 +160,6 @@ CREATE TABLE `toll_details` (
   PRIMARY KEY  (`sno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `toll_details`
---
-
-/*!40000 ALTER TABLE `toll_details` DISABLE KEYS */;
 INSERT INTO `toll_details` (`sno`,`state`,`NH_no`,`toll_name`,`toll_location`,`section`) VALUES 
  (1,'Andhra Pradesh','16','Aganampudi','Km 728.055','Vishakhapatnam - Ankapalli [Km 2.837 to &Km 395.870 to Km358.00(New Chainage From Km 700.544 to Km 740.255)]\r'),
  (2,'Andhra Pradesh','7','Amakathadu','Km 250.700','Hyderabad Bangalore (km 211.000 to km 462.164)\r'),
@@ -722,12 +659,6 @@ INSERT INTO `toll_details` (`sno`,`state`,`NH_no`,`toll_name`,`toll_location`,`s
  (456,'West Bengal','31','Surjapur','Km 451.00','Dalkhola - Islampur (Km 447.00 - Km 498.970)\r'),
  (457,'West Bengal','81','Thirupparaithurai','Km 157.500','Trichy - Karur\r'),
  (458,'West Bengal','44','Valanchettiyur','Km 338.000','Karur Bypass - Dindigul bypass');
-/*!40000 ALTER TABLE `toll_details` ENABLE KEYS */;
-
-
---
--- Definition of table `users`
---
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -743,24 +674,7 @@ CREATE TABLE `users` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `users`
---
-
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`,`name`,`email`,`dob`,`gender`,`address`,`phone`,`pass`,`time`) VALUES 
  (2,'Santhanam','santhanam.3457.com','1990-11-11','1990-11-11','Pondicherry','9994745727','123123','2017/12/28 18:17:33'),
  (3,'Kavi Arasan','naresh.3457@gmail.com','1990-01-01','1990-01-01','Cuddalore','789789892','456456456','2017/12/30 10:40:34'),
  (4,'Naresh','naresh.3457@gmail.com','','','Pondicherry','9994745727','789789789','2018/01/03 12:43:56');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
-
-
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
