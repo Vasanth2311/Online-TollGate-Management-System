@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package TGMS;
 
 import java.awt.Image;
@@ -29,10 +26,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-/**
- *
- * @author java3
- */
 @WebServlet("/admin_detail")
 @MultipartConfig(maxFileSize = 16177215)
 public class admin_detail extends HttpServlet {
@@ -60,13 +53,6 @@ public class admin_detail extends HttpServlet {
         String des = request.getParameter("des");
         System.out.println("name" + name + "password" + pass + address + "mail" + mail + "cell" + phone);
         InputStream inputStream = null;
-//        Part filePart = request.getPart("dpic");
-//        if (filePart != null) {
-//            System.out.println(filePart.getName());
-//            System.out.println(filePart.getSize());
-//            System.out.println(filePart.getContentType());
-//            inputStream = filePart.getInputStream();
-//        }
         Connection conn = null;
         String message = null;
         try {
@@ -86,9 +72,6 @@ public class admin_detail extends HttpServlet {
             statement.setString(8, pin);
 
 
-//            if (inputStream != null) {
-//                statement.setBlob(9, inputStream);
-//            }
             statement.setString(9, pass);
             statement.setString(10, des);
             int row = statement.executeUpdate();
